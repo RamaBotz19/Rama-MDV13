@@ -392,9 +392,9 @@ let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(
     throw e
   }
 }
-handler.help = ['menu', 'help', '?']
+handler.help = ['allmenu']
 handler.tags = ['main']
-handler.command = /^(menu|help|\?)$/i
+handler.command = /^(allmenu)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
