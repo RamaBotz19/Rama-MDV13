@@ -491,7 +491,7 @@ const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fro
     throw e
   }
 }
-handler.help = ['menu2']
+handler.help = ['menu','\?']
 handler.tags = ['main']
 handler.command = /^(menu2)$/i
 handler.owner = false
