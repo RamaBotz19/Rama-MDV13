@@ -70,7 +70,7 @@ global.author = `@mhdfakri_`
 
 global.wm = 'AWAKRI DEVICE' 
 global.watermark = wm
-
+global.namabot = 'AWAKRI'
 //============= MEDIA BUTTON NYA ============\\\
 global.instagram = 'https://instagram.com/mhdfakri_'
 global.botdate = `❏ ${wktuh} H  ${wktum} M  ${wktus} S\n❏ ${week} ${date}`
