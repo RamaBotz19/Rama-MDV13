@@ -325,7 +325,7 @@ const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fro
             description: menuu,
             buttonText: 'Klik Disini',
             listType: 1,
-            footerText: "📮 Silahkan Pilih Menu Dibawah Ini",
+            footerText: `$ {botdate}\n📮 Silahkan Pilih Menu Dibawah Ini`,
             mtype: 'listMessage',
             sections: [
               {
@@ -372,122 +372,6 @@ const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fro
 		}
                   ],
                 "title": "⤿ ALL MENU"
-                  }, {
-		"rows": [{
-                  "title": "☰ ABSEN MENU",
-                  "description": "This Menu to Display to the Absen",
-                  "rowId": `${_p}? absen`
-                }, {
-                  "title": "☰ ANIME MENU",
-                  "description": "This Menu to Display to the Anime",
-                  "rowId": `${_p}? anime`
-                }, {
-                  "title": "☰ STICKER  MENU",
-                  "description": "This Menu to Display to the Sticker",
-                  "rowId": `${_p}? sticker`
-                }, {
-                  "title": "☰ DOWNLOAD MENU",
-                  "description": "This Menu to Display to the Downloader",
-                  "rowId": `${_p}? downloader`
-                }, {
-                  "title": "☰ EXP & LIMIT MENU",
-                  "description": "This Menu to Display to the Exp",
-                  "rowId": `${_p}? xp`
-                }, {
-                  "title": "☰ FUN MENU",
-                  "description": "This Menu to Display to the Fun",
-                  "rowId": `${_p}? fun`
-                }, {
-                  "title": "☰ GAME MENU",
-                  "description": "This Menu to Display to the Game",
-                  "rowId": `${_p}? game`
-                }, {
-                  "title": "☰ GITHUB MENU",
-                  "description": "This Menu to Display to the Github",
-                  "rowId": `${_p}? github`
-                }, {
-                  "title": "☰ GROUP MENU",
-                  "description": "This Menu to Display to the Group",
-                  "rowId": `${_p}? group`
-                }, {
-                  "title": "☰ IMAGE MENU",
-                  "description": "This Menu to Display to the Image",
-                  "rowId": `${_p}? image`
-                }, {
-                  "title": "☰ INTERNET MENU",
-                  "description": "This Menu to Display to the Internet",
-                  "rowId": `${_p}? internet`
-                }, {
-                  "title": "☰ ISLAMIC MENU",
-                  "description": "This Menu to Display to the Islam",
-                  "rowId": `${_p}? islam`
-                }, {
-                  "title": "☰ KERANG MENU",
-                  "description": "This Menu to Display to the Kerang",
-                  "rowId": `${_p}? kerang`
-                }, {
-                  "title": "☰ MAKER MENU",
-                  "description": "This Menu to Display to the Maker",
-                  "rowId": `${_p}? maker`
-                }, {
-                  "title": "☰ OWNER MENU",
-                  "description": "This Menu to Display to the Owner",
-                  "rowId": `${_p}? owner`
-                }, {
-                  "title": "☰ CHANGE VOICE MENU",
-                  "description": "This Menu to Display to the Voice Changer",
-                  "rowId": `${_p}? suara`
-                }, {
-                  "title": "☰ PREMIUM MENU",
-                  "description": "This Menu to Display to the Premium",
-                  "rowId": `${_p}? premium`
-                }, {
-                  "title": "☰ QUOTES MENU",
-                  "description": "This Menu to Display to the Quotes",
-                  "rowId": `${_p}? quotes`
-                }, {
-                  "title": "☰ INFO BOT",
-                  "description": "This Menu to Display to the Info",
-                  "rowId": `${_p}? info`
-		},{
-                  "title": "☰ RPG MENU",
-                  "description": "This Menu to Display to the Rpg",
-                  "rowId": `${_p}? rpg`
-                }, {
-                  "title": "☰ STALKER MENU",
-                  "description": "This Menu to Display to the Stalker",
-                  "rowId": `${_p}? stalk`
-                }, {
-                  "title": "☰ SHORT LINK MENU",
-                  "description": "This Menu to Display to the Short Link",
-                  "rowId": `${_p}? shortlink`
-                }, {
-                  "title": "☰ TOOLS MENU",
-                  "description": "This Menu to Display to the Tools",
-                  "rowId": `${_p}? tools`
-                }, {
-                  "title": "☰ TEXT MAKER MENU",
-                  "description": "This Menu to Display to the Text",
-                  "rowId": `${_p}? text`
-                }, {
-                  "title": "☰ HENTAI MENU",
-                  "description": "This Menu to Display to the Hentai",
-                  "rowId": `${_p}? nsfw`
-                }, {
-                  "title": "☰ RANDOM MENU",
-                  "description": "This Menu to Display to the Random",
-                  "rowId": `${_p}? random`
-                }, {
-                  "title": "☰ TEXT PRO MENU",
-                  "description": "This Menu to Display to the Text Pro",
-                  "rowId": `${_p}? textpro`
-                }, {
-                  "title": "☰ PHOTO OXY MENU",
-                  "description": "This Menu to Display to the Photo Oxy",
-                  "rowId": `${_p}? textpro`
-                }
-                  ],
-                "title": "⤿ MORE MENU"
                 }, {
                 "rows": [{
                   "title": ` ☰ OWNER`,
