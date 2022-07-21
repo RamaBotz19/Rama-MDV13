@@ -490,9 +490,9 @@ const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fro
     throw e
   }
 }
-handler.help = ['menu','\?']
+handler.help = ['listmenu','\?']
 handler.tags = ['main']
-handler.command = /^(menu|\?)$/i
+handler.command = /^(listmenu|\?)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
