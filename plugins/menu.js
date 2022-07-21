@@ -250,7 +250,6 @@ let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(
 	"participant": "0@s.whatsapp.net"
 }
 let menuu = `❏  *I N F O*
-▸ *${ucapan()}*
 ▸ *Name:* ${name}
 ▸ *Tag:* ${tag}
 ▸ *Limit:* ${limit}
@@ -260,11 +259,11 @@ let menuu = `❏  *I N F O*
 ▸ *Time:* ${wib}`
 const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fromObject({
         listMessage: {
-            title: ``,
+            title: `${ucapan()}`,
             description: menuu,
             buttonText: 'LIST MENU',
             listType: 1,
-            footerText: "Created By Pilar",
+            footerText: "Created By KrizynOfc",
             mtype: 'listMessage',
             sections: [
               {
