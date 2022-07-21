@@ -305,7 +305,7 @@ Date Islamic : ${dateIslamic}
 ┏━━━━━━━━━━━━━━━━━
                     ıll *INFO BOT* llı 
 ┗━━━━━━━━━━━━━━━━━
-◎ Name : ${namebot}
+◎ Name : ${namabot}
 ◎ Active : ${uptime}
 ◎ User : ${Object.keys(global.db.data.users).length} User
 ◎ Mode : ${global.opts['self'] ? 'Self' : 'public'}
