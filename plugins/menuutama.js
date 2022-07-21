@@ -596,7 +596,7 @@ const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fro
     
 //━━━━━━━━[ SETTINGS MENU ]━━━━━━━━//
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    let message = await prepareWAMessageMedia({ image: await (await require('node-fetch')('https://telegra.ph/file/d193805fc50e562415f3d.jpg')).buffer()}, { upload: conn.waUploadToServer }) 
+    let message = await prepareWAMessageMedia({ image: await (await require('node-fetch')(ppmenu)).buffer()}, { upload: conn.waUploadToServer }) 
       const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
       templateMessage: {
           hydratedTemplate: {
