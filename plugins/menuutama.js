@@ -320,93 +320,112 @@ const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fro
             mtype: 'listMessage',
             sections: [
               {
-		"rows": [{
-		"title": `☰ STORE OFFICIAL`,
-                  "description": "This Menu to Display to the Store Official",
-                  "rowId": '.store'
-		}
-                  ],
-                "title": "⤿ STORE OFFICIAL"
-		}, {
-		"rows": [{
-		"title": `☰ SEWA BOT`,
-                  "description": "This Menu to Display to the Sewa",
-                  "rowId": '.sewa'
-		}, {
-		"title": `☰ DONASI BOT`,
-                  "description": "This Menu to Display to the Donasi",
-                  "rowId": '.donasi'
-		}, {
-		"title": `☰ PAYMANT BOT`,
-                  "description": "This Menu to Display to the Paymant",
-                  "rowId": '.paymant'
-		}
-                  ],
-                "title": "⤿ PAYMANT"
-                }, {
-		"rows": [{
-		"title": `☰ ALL GROUP OFFICIAL`,
-                  "description": "This Menu to Display to the All Group Official",
-                  "rowId": '.allgc'
-                  }, {
-		"title": `☰ GROUP BOT`,
-                  "description": "This Menu to Display to the GROUP BOT",
-                  "rowId": '.gcbot'
-		}
-                  ],
-                "title": "⤿ GROUP OFFICIAL"
-                  }, {
                 "rows": [{
-                  "title": `☰ ALL MENU`,
-                  "description": "This Menu to Display to the All",
-                  "rowId": '.? all'
-		}
-                  ],
-                "title": "⤿ ALL MENU"
-                }, {
-                "rows": [{
-                  "title": ` ☰ OWNER`,
-                  "description": "This Menu to Display to the Big Bos",
+                  "title": `OWNER BOT`,
+                  "description": "Nomor Pemilik Bot Chat P/Meminta Save Tidak Akan Di Respon",
                   "rowId": `.owner`
-		},{
-		"title": ` ☰ SOSMED`,
-                  "description": "This Menu to Display to the Social Media",
-                  "rowId": `.sosmed`
-		},{
-		"title": ` ☰ GITHUB`,
-                  "description": "This Menu to Display to the Github",
-                  "rowId": `.gb`
                 },{
-                  "title": ` ☰ SCRIPT`,
-                  "description": "This Menu to Display to the Script",
-                  "rowId": `.sc`
-		},{
-		"title": ` ☰ YOUTUBE`,
-                  "description": "This Menu to Display to the Youtube",
-                  "rowId": `.ytowner`
-		}
-                  ],
-                "title": "⤿ INFO OWNER"
-		},{
-		"rows": [{
-		"title": ` ☰ RULES BOT`,
-                  "description": "This Menu to Display to the Rules",
-                  "rowId": `.rules`
-		},{
-		"title": ` ☰ STATUS BOT`,
-                  "description": "This Menu to Display to the Status",
-                  "rowId": `.botstat`
-		},{
-		"title": ` ☰ RESPON BOT`,
-                  "description": "This Menu to Display to the Respon",
-                  "rowId": `.ping`
-		},{
-		"title": ` ☰ CONTRIBUTORS`,
-                  "description": "This Menu to Display to the Contributors",
-                  "rowId": `.tqto`
+                  "title": "INFO BOT",
+                  "description": "Menampilkan Menu Info",
+                  "rowId": `${_p}? info`
+                }],
+                "title": "INFORMASI BOT"
+              }, {
+                "rows": [{
+                  "title": `SEMUA PERINTAH`,
+                  "description": "Menampilkan Menu All",
+                  "rowId": '.menu2'
+                  }, {
+                  "title": "ABSEN & VOTING",
+                  "description": "Menampilkan Menu Absen",
+                  "rowId": `${_p}? absen`
+                }, {
+                  "title": "ANIME MENU",
+                  "description": "Menampilkan Menu Anime",
+                  "rowId": `${_p}? anime`
+                }, {
+                  "title": "STICKER & CONVERTER",
+                  "description": "Menampilkan Menu Sticker",
+                  "rowId": `${_p}? sticker`
+                }, {
+                  "title": "DOWNLOADER MENU",
+                  "description": "Menampilkan Menu Downloader",
+                  "rowId": `${_p}? downloader`
+                }, {
+                  "title": "EXP & LIMIT",
+                  "description": "Menampilkan Menu Exp",
+                  "rowId": `${_p}? xp`
+                }, {
+                  "title": "FUN MENU",
+                  "description": "Menampilkan Menu Fun",
+                  "rowId": `${_p}? fun`
+                }, {
+                  "title": "GAME MENU",
+                  "description": "Menampilkan Menu Game",
+                  "rowId": `${_p}? game`
+                }, {
+                  "title": "GITHUB MENU",
+                  "description": "Menampilkan Menu Github",
+                  "rowId": `${_p}? github`
+                }, {
+                  "title": "GROUP MENU",
+                  "description": "Menampilkan Menu Group",
+                  "rowId": `${_p}? group`
+                }, {
+                  "title": "IMAGE MENU",
+                  "description": "Menampilkan Menu Image",
+                  "rowId": `${_p}? image`
+                }, {
+                  "title": "INTERNET MENU",
+                  "description": "Menampilkan Menu Internet",
+                  "rowId": `${_p}? internet`
+                }, {
+                  "title": "ISLAM MENU",
+                  "description": "Menampilkan Menu Islam",
+                  "rowId": `${_p}? islam`
+                }, {
+                  "title": "KERANG AJAIB",
+                  "description": "Menampilkan Menu Kerang",
+                  "rowId": `${_p}? kerang`
+                }, {
+                  "title": "MAKER MENU",
+                  "description": "Menampilkan Menu Maker",
+                  "rowId": `${_p}? maker`
+                }, {
+                  "title": "OWNER MENU",
+                  "description": "Menampilkan Menu Owner",
+                  "rowId": `${_p}? owner`
+                }, {
+                  "title": "PENGUBAH SUARA",
+                  "description": "Menampilkan Menu Voice Changer",
+                  "rowId": `${_p}? suara`
+                }, {
+                  "title": "PREMIUM MENU",
+                  "description": "Menampilkan Menu Premium",
+                  "rowId": `${_p}? premium`
+                }, {
+                  "title": "QUOTES MENU",
+                  "description": "Menampilkan Menu Quotes",
+                  "rowId": `${_p}? quotes`
+                }, {
+                  "title": "RPG MENU",
+                  "description": "Menampilkan Menu Rpg",
+                  "rowId": `${_p}? rpg`
+                }, {
+                  "title": "STALKER MENU",
+                  "description": "Menampilkan Menu Stalker",
+                  "rowId": `${_p}? stalk`
+                }, {
+                  "title": "SHORT LINK",
+                  "description": "Menampilkan Menu Short Link",
+                  "rowId": `${_p}? shortlink`
+                }, {
+                  "title": "TOOLS MENU",
+                  "description": "Menampilkan Menu Tools",
+                  "rowId": `${_p}? tools`
                 }
                   ],
-                "title": "⤿ INFOMATION"
+                "title": "⤿ LIST MENU"
               }
             ], "contextInfo": {
               "stanzaId": m.key.id,
