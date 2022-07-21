@@ -289,9 +289,8 @@ const fdoc = {
 
 //━━━━━━━━[ BAGIAN MENU ]━━━━━━━━//
 if (teks == '404') {
-let menuu = `┏━━━━━━━━━━━━━━━━━
+let menuu = `
                     ıll *INFO USER* llı
-┗━━━━━━━━━━━━━━━━━      
 ⌬ Name : ${name}
 ⌬ Api : ${tag}
 ⌬ Limit : ${limit}
@@ -301,10 +300,9 @@ let menuu = `┏━━━━━━━━━━━━━━━━━
 ⌬ Premium : ${global.prem ? 'Premium' : 'Free'}
 ⌬ Time : ${wib}
 ⌬ Date  : ${week} ${date}
-Date Islamic : ${dateIslamic}
-┏━━━━━━━━━━━━━━━━━
+⌬ Date Islamic : ${dateIslamic}
+
                     ıll *INFO BOT* llı 
-┗━━━━━━━━━━━━━━━━━
 ◎ Name : ${namabot}
 ◎ Active : ${uptime}
 ◎ User : ${Object.keys(global.db.data.users).length} User
