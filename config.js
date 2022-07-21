@@ -65,14 +65,19 @@ global.APIKeys = { // APIKey Here
 
 // Sticker WM
 global.stiker_wait = 'Stiker sedang dibuat'
-global.packname = 'ZEUSBOTZ-MD'
-global.author = `By Pilar`
-global.wm = 'ZEUS BOT - MD' 
+global.packname = 'AWAKRI DEVICE'
+global.author = `@mhdfakri_`
+
+global.wm = 'AWAKRI DEVICE' 
 global.watermark = wm
-global.instagram = 'https://instagram.com/not_pilar32'
+
+//============= MEDIA BUTTON NYA ============\\\
+global.instagram = 'https://instagram.com/mhdfakri_'
 global.botdate = `❏ ${wktuh} H  ${wktum} M  ${wktus} S\n❏ ${week} ${date}`
 global.media = 'https://telegra.ph/file/ccb2359d3925fd7af58cd.jpg'
-global.github = 'https://github.com/PilarV2'
+global.github = 'https://github.com/krizynofc'
+global.ppmenu = 'https://telegra.ph/file/d193805fc50e562415f3d.jpg'
+
 global.fla = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=crafts-logo&doScale=true&scaleWidth=500&scaleHeight=500&fontsize=100&fillTextType=0&backgroundColor=%23401620&text='
 global.wait = '_*L O A D I N G*_'
 global.eror = '_*Server Error*_'
