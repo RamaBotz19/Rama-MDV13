@@ -22,19 +22,27 @@ let moment = require('moment-timezone')
 //━━━━━━━━[ DEFAULT MENU ]━━━━━━━━//
 const defaultMenu = {
   before:`
-〔  𝐓 𝐎 𝐃 𝐀 𝐘  〕
-» 𝚃𝙾𝙳𝙰𝚈 : *%week* 
-» 𝙳𝙰𝚃𝙴 : *%date*
-» 𝙳𝙰𝚃𝙴 𝙸𝚂𝙻𝙰𝙼𝙸𝙲 : *%dateIslamic*
-» 𝚃𝙸𝙼𝙴 : *%time*
-
-〔  𝐃𝐀𝐓𝐀𝐁𝐀𝐒𝐄  〕
-» 𝚄𝙿𝚃𝙸𝙼𝙴 : *%uptime*
-» 𝙳𝙰𝚃𝙰𝙱𝙰𝚂𝙴 : %rtotalreg 𝚍𝚊𝚛𝚒 %totalreg 
-» 𝙼𝙴𝙼𝙾𝚁𝚈 𝚄𝚂𝙴𝙳 : *${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB*
+╭──〔  𝐈𝐍𝐅𝐎 𝐔𝐒𝐄𝐑  〕─⬣
+┃➵͜͡✪ 𝚄𝚂𝙴𝚁 : *%name*
+┃➵͜͡✪ 𝚁𝙴𝙼𝙰𝙸𝙽𝙸𝙽𝙶 𝙻𝙸𝙼𝙸𝚃 : *%limit* 𝙻𝙸𝙼𝙸𝚃
+┃➵͜͡✪ 𝚁𝙾𝙻𝙴 : *%role*
+┃➵͜͡✪ 𝙻𝙴𝚅𝙴𝙻 : *%level (%exp / %maxexp)* 
+┃➵͜͡✪ 𝚃𝙾𝚃𝙰𝙻 𝚇𝙿 : *%totalexp* 𝚇𝙿
+┃
+┃──〔  𝐓 𝐎 𝐃 𝐀 𝐘  〕─⬣
+┃➵͜͡✪ 𝚃𝙾𝙳𝙰𝚈 : *%week %weton* 
+┃➵͜͡✪ 𝙳𝙰𝚃𝙴 : *%date*
+┃➵͜͡✪ 𝙳𝙰𝚃𝙴 𝙸𝚂𝙻𝙰𝙼𝙸𝙲 : *%dateIslamic*
+┃➵͜͡✪ 𝚃𝙸𝙼𝙴 : *%time*
+┃
+┃──〔  𝐃𝐀𝐓𝐀𝐁𝐀𝐒𝐄  〕─⬣
+┃➵͜͡✪ 𝚄𝙿𝚃𝙸𝙼𝙴 : *%uptime*
+┃➵͜͡✪ 𝙳𝙰𝚃𝙰𝙱𝙰𝚂𝙴 : %rtotalreg 𝚍𝚊𝚛𝚒 %totalreg 
+┃➵͜͡✪ 𝙼𝙴𝙼𝙾𝚁𝚈 𝚄𝚂𝙴𝙳 : *${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB*
+╰─────────────⬣
 %readmore`.trimStart(), 
   header: '╭─㉿ 〔 %category 〕 ㉿─\n┃',
-  body: '◎ %cmd %islimit %isPremium',
+  body: '┃⫹⫺ %cmd %islimit %isPremium',
   footer: '┃\n╰────────㉿\n', 
   footerText: 'Powered by ᯤ ᴋʀɪᴢʏɴ ᴏꜰᴄ',
   after: `
@@ -46,6 +54,7 @@ const defaultMenu = {
 ⫹⫺ Nurutomo
 ⫹⫺ Ilmanhdyt
 ⫹⫺ Elyas
+⫹⫺ Hyzer
 ⫹⫺ KrizynOfc
 ╰─────────────⬣
 `,
@@ -289,20 +298,20 @@ const fdoc = {
 
 //━━━━━━━━[ BAGIAN MENU ]━━━━━━━━//
 if (teks == '404') {
-let menuu = `
+let menuu = `┏━━━━━━━━━━━━━━━━━
                     ıll *INFO USER* llı
+┗━━━━━━━━━━━━━━━━━      
 ⌬ Name : ${name}
 ⌬ Api : ${tag}
 ⌬ Limit : ${limit}
 ⌬ Role : ${role}
-⌬ Level : ${level}
-⌬ Exp : ${exp}
 ⌬ Premium : ${global.prem ? 'Premium' : 'Free'}
 ⌬ Time : ${wib}
 ⌬ Date  : ${week} ${date}
-⌬ Date Islamic : ${dateIslamic}
 
+┏━━━━━━━━━━━━━━━━━
                     ıll *INFO BOT* llı 
+┗━━━━━━━━━━━━━━━━━
 ◎ Name : ${namabot}
 ◎ Active : ${uptime}
 ◎ User : ${Object.keys(global.db.data.users).length} User
@@ -316,116 +325,213 @@ const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fro
             description: menuu,
             buttonText: 'Klik Disini',
             listType: 1,
-            footerText: `${botdate}\n📮 Silahkan Pilih Menu Dibawah Ini`,
+            footerText: "📮 Silahkan Pilih Menu Dibawah Ini",
             mtype: 'listMessage',
             sections: [
               {
-                "rows": [{
-                  "title": `OWNER BOT`,
-                  "description": "Nomor Pemilik Bot Chat P/Meminta Save Tidak Akan Di Respon",
-                  "rowId": `.owner`
-                },{
-                  "title": "INFO BOT",
-                  "description": "Menampilkan Menu Info",
-                  "rowId": `${_p}? info`
-                }],
-                "title": "INFORMASI BOT"
-              }, {
-                "rows": [{
-                  "title": `SEMUA PERINTAH`,
-                  "description": "Menampilkan Menu All",
-                  "rowId": '.menu2'
+		"rows": [{
+		"title": `☰ STORE OFFICIAL`,
+                  "description": "This Menu to Display to the Store Official",
+                  "rowId": '.store'
+		}
+                  ],
+                "title": "⤿ STORE OFFICIAL"
+		}, {
+		"rows": [{
+		"title": `☰ SEWA BOT`,
+                  "description": "This Menu to Display to the Sewa",
+                  "rowId": '.sewa'
+		}, {
+		"title": `☰ DONASI BOT`,
+                  "description": "This Menu to Display to the Donasi",
+                  "rowId": '.donasi'
+		}, {
+		"title": `☰ PAYMANT BOT`,
+                  "description": "This Menu to Display to the Paymant",
+                  "rowId": '.paymant'
+		}
+                  ],
+                "title": "⤿ PAYMANT"
+                }, {
+		"rows": [{
+		"title": `☰ ALL GROUP OFFICIAL`,
+                  "description": "This Menu to Display to the All Group Official",
+                  "rowId": '.allgc'
                   }, {
-                  "title": "ABSEN & VOTING",
-                  "description": "Menampilkan Menu Absen",
+		"title": `☰ GROUP BOT`,
+                  "description": "This Menu to Display to the GROUP BOT",
+                  "rowId": '.gcbot'
+		}
+                  ],
+                "title": "⤿ GROUP OFFICIAL"
+                  }, {
+                "rows": [{
+                  "title": `☰ ALL MENU`,
+                  "description": "This Menu to Display to the All",
+                  "rowId": '.? all'
+		}
+                  ],
+                "title": "⤿ ALL MENU"
+                  }, {
+		"rows": [{
+                  "title": "☰ ABSEN MENU",
+                  "description": "This Menu to Display to the Absen",
                   "rowId": `${_p}? absen`
                 }, {
-                  "title": "ANIME MENU",
-                  "description": "Menampilkan Menu Anime",
+                  "title": "☰ ANIME MENU",
+                  "description": "This Menu to Display to the Anime",
                   "rowId": `${_p}? anime`
                 }, {
-                  "title": "STICKER & CONVERTER",
-                  "description": "Menampilkan Menu Sticker",
+                  "title": "☰ STICKER  MENU",
+                  "description": "This Menu to Display to the Sticker",
                   "rowId": `${_p}? sticker`
                 }, {
-                  "title": "DOWNLOADER MENU",
-                  "description": "Menampilkan Menu Downloader",
+                  "title": "☰ DOWNLOAD MENU",
+                  "description": "This Menu to Display to the Downloader",
                   "rowId": `${_p}? downloader`
                 }, {
-                  "title": "EXP & LIMIT",
-                  "description": "Menampilkan Menu Exp",
+                  "title": "☰ EXP & LIMIT MENU",
+                  "description": "This Menu to Display to the Exp",
                   "rowId": `${_p}? xp`
                 }, {
-                  "title": "FUN MENU",
-                  "description": "Menampilkan Menu Fun",
+                  "title": "☰ FUN MENU",
+                  "description": "This Menu to Display to the Fun",
                   "rowId": `${_p}? fun`
                 }, {
-                  "title": "GAME MENU",
-                  "description": "Menampilkan Menu Game",
+                  "title": "☰ GAME MENU",
+                  "description": "This Menu to Display to the Game",
                   "rowId": `${_p}? game`
                 }, {
-                  "title": "GITHUB MENU",
-                  "description": "Menampilkan Menu Github",
+                  "title": "☰ GITHUB MENU",
+                  "description": "This Menu to Display to the Github",
                   "rowId": `${_p}? github`
                 }, {
-                  "title": "GROUP MENU",
-                  "description": "Menampilkan Menu Group",
+                  "title": "☰ GROUP MENU",
+                  "description": "This Menu to Display to the Group",
                   "rowId": `${_p}? group`
                 }, {
-                  "title": "IMAGE MENU",
-                  "description": "Menampilkan Menu Image",
+                  "title": "☰ IMAGE MENU",
+                  "description": "This Menu to Display to the Image",
                   "rowId": `${_p}? image`
                 }, {
-                  "title": "INTERNET MENU",
-                  "description": "Menampilkan Menu Internet",
+                  "title": "☰ INTERNET MENU",
+                  "description": "This Menu to Display to the Internet",
                   "rowId": `${_p}? internet`
                 }, {
-                  "title": "ISLAM MENU",
-                  "description": "Menampilkan Menu Islam",
+                  "title": "☰ ISLAMIC MENU",
+                  "description": "This Menu to Display to the Islam",
                   "rowId": `${_p}? islam`
                 }, {
-                  "title": "KERANG AJAIB",
-                  "description": "Menampilkan Menu Kerang",
+                  "title": "☰ KERANG MENU",
+                  "description": "This Menu to Display to the Kerang",
                   "rowId": `${_p}? kerang`
                 }, {
-                  "title": "MAKER MENU",
-                  "description": "Menampilkan Menu Maker",
+                  "title": "☰ MAKER MENU",
+                  "description": "This Menu to Display to the Maker",
                   "rowId": `${_p}? maker`
                 }, {
-                  "title": "OWNER MENU",
-                  "description": "Menampilkan Menu Owner",
+                  "title": "☰ OWNER MENU",
+                  "description": "This Menu to Display to the Owner",
                   "rowId": `${_p}? owner`
                 }, {
-                  "title": "PENGUBAH SUARA",
-                  "description": "Menampilkan Menu Voice Changer",
+                  "title": "☰ CHANGE VOICE MENU",
+                  "description": "This Menu to Display to the Voice Changer",
                   "rowId": `${_p}? suara`
                 }, {
-                  "title": "PREMIUM MENU",
-                  "description": "Menampilkan Menu Premium",
+                  "title": "☰ PREMIUM MENU",
+                  "description": "This Menu to Display to the Premium",
                   "rowId": `${_p}? premium`
                 }, {
-                  "title": "QUOTES MENU",
-                  "description": "Menampilkan Menu Quotes",
+                  "title": "☰ QUOTES MENU",
+                  "description": "This Menu to Display to the Quotes",
                   "rowId": `${_p}? quotes`
                 }, {
-                  "title": "RPG MENU",
-                  "description": "Menampilkan Menu Rpg",
+                  "title": "☰ INFO BOT",
+                  "description": "This Menu to Display to the Info",
+                  "rowId": `${_p}? info`
+		},{
+                  "title": "☰ RPG MENU",
+                  "description": "This Menu to Display to the Rpg",
                   "rowId": `${_p}? rpg`
                 }, {
-                  "title": "STALKER MENU",
-                  "description": "Menampilkan Menu Stalker",
+                  "title": "☰ STALKER MENU",
+                  "description": "This Menu to Display to the Stalker",
                   "rowId": `${_p}? stalk`
                 }, {
-                  "title": "SHORT LINK",
-                  "description": "Menampilkan Menu Short Link",
+                  "title": "☰ SHORT LINK MENU",
+                  "description": "This Menu to Display to the Short Link",
                   "rowId": `${_p}? shortlink`
                 }, {
-                  "title": "TOOLS MENU",
-                  "description": "Menampilkan Menu Tools",
+                  "title": "☰ TOOLS MENU",
+                  "description": "This Menu to Display to the Tools",
                   "rowId": `${_p}? tools`
+                }, {
+                  "title": "☰ TEXT MAKER MENU",
+                  "description": "This Menu to Display to the Text",
+                  "rowId": `${_p}? text`
+                }, {
+                  "title": "☰ HENTAI MENU",
+                  "description": "This Menu to Display to the Hentai",
+                  "rowId": `${_p}? nsfw`
+                }, {
+                  "title": "☰ RANDOM MENU",
+                  "description": "This Menu to Display to the Random",
+                  "rowId": `${_p}? random`
+                }, {
+                  "title": "☰ TEXT PRO MENU",
+                  "description": "This Menu to Display to the Text Pro",
+                  "rowId": `${_p}? textpro`
+                }, {
+                  "title": "☰ PHOTO OXY MENU",
+                  "description": "This Menu to Display to the Photo Oxy",
+                  "rowId": `${_p}? textpro`
                 }
                   ],
-                "title": "⤿ LIST MENU"
+                "title": "⤿ MORE MENU"
+                }, {
+                "rows": [{
+                  "title": ` ☰ OWNER`,
+                  "description": "This Menu to Display to the Big Bos",
+                  "rowId": `.owner`
+		},{
+		"title": ` ☰ SOSMED`,
+                  "description": "This Menu to Display to the Social Media",
+                  "rowId": `.sosmed`
+		},{
+		"title": ` ☰ GITHUB`,
+                  "description": "This Menu to Display to the Github",
+                  "rowId": `.gb`
+                },{
+                  "title": ` ☰ SCRIPT`,
+                  "description": "This Menu to Display to the Script",
+                  "rowId": `.sc`
+		},{
+		"title": ` ☰ YOUTUBE`,
+                  "description": "This Menu to Display to the Youtube",
+                  "rowId": `.ytowner`
+		}
+                  ],
+                "title": "⤿ INFO OWNER"
+		},{
+		"rows": [{
+		"title": ` ☰ RULES BOT`,
+                  "description": "This Menu to Display to the Rules",
+                  "rowId": `.rules`
+		},{
+		"title": ` ☰ STATUS BOT`,
+                  "description": "This Menu to Display to the Status",
+                  "rowId": `.botstat`
+		},{
+		"title": ` ☰ RESPON BOT`,
+                  "description": "This Menu to Display to the Respon",
+                  "rowId": `.ping`
+		},{
+		"title": ` ☰ CONTRIBUTORS`,
+                  "description": "This Menu to Display to the Contributors",
+                  "rowId": `.tqto`
+                }
+                  ],
+                "title": "⤿ INFOMATION"
               }
             ], "contextInfo": {
               "stanzaId": m.key.id,
@@ -545,9 +651,9 @@ const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fro
     throw e
   }
 }
-handler.help = ['menu']
+handler.help = ['menuutama']
 handler.tags = ['main']
-handler.command = /^(menu|alive|\?)$/i
+handler.command = /^(menuutama|awakri|\?)$/i
 handler.register = true
 handler.owner = false
 handler.mods = false
@@ -578,18 +684,18 @@ function clockString(ms) {
 }
 function ucapan() {
   const time = moment.tz('Asia/Jakarta').format('HH')
-  res = "Selamat Dinihari"
+  res = "Welcome to the Krizyn Multi Device"
   if (time >= 4) {
-    res = "Selamat Pagi"
+    res = "Selamat Dinihari"
   }
   if (time > 10) {
-    res = "Selamat Siang"
+    res = "Selamat Pagi"
   }
   if (time >= 15) {
-    res = "Selamat Sore"
+    res = "Selamat Siang"
   }
   if (time >= 18) {
-    res = "Selamat Malam"
+    res = "Selamat Sore"
   }
   return res
 }
