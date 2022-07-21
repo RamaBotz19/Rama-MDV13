@@ -596,7 +596,7 @@ const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fro
     
 //━━━━━━━━[ SETTINGS MENU ]━━━━━━━━//
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    let message = await prepareWAMessageMedia({ image: await (await require('node-fetch')(fotonya2)).buffer()}, { upload: conn.waUploadToServer }) 
+    let message = await prepareWAMessageMedia({ image: await (await require('node-fetch')('https://telegra.ph/file/d193805fc50e562415f3d.jpg')).buffer()}, { upload: conn.waUploadToServer }) 
       const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
       templateMessage: {
           hydratedTemplate: {
@@ -605,8 +605,8 @@ const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fro
             hydratedFooterText: 'Jika menemukan bug, eror atau kesulitan\nDiharapkan Hubungi ke owner agar diperbaiki kembali', 
             hydratedButtons: [{
             urlButton: {
-               displayText: 'Saweria',
-               url: webm
+               displayText: 'Youtube',
+               url: 'https://youtube.com/c/hokenbeusz'
              }
 
            },
@@ -619,22 +619,22 @@ const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fro
            },
                {
              quickReplyButton: {
-               displayText: '💌 STORE',
-               id: '.store',
+               displayText: '🐼 DONASI',
+               id: '.donosi',
              }
 
            },
                {
              quickReplyButton: {
-               displayText: '💌 OWNER',
+               displayText: '🐼 OWNER',
                id: '.owner',
              }
 
            },
            {
              quickReplyButton: {
-               displayText: '◤GROUP OFFICIAL◢',
-               id: '.allgc',
+               displayText: 'CREDIT',
+               id: '.tqto',
              }
            }]
          }
