@@ -21,7 +21,7 @@ let wktus = moment.tz('Asia/Jakarta').format('ss')
 function pickRandom(list) {
   return list[Math.floor(Math.random() * list.length)]
 }
-global.owner = ['6289625556161','62831433937633', '62896255561617'] // Put your number here
+global.owner = ['62895327934887','48699515524', '62895328590064'] // Put your number here
 global.mods = [] // Want some help?
 global.prems = [] // Premium user has unlimited limit
 global.APIs = { // API Prefix
@@ -64,7 +64,7 @@ global.APIKeys = { // APIKey Here
 //Kata apikey ubah jadi apikey lu dengan beli di website nya
 
 // Sticker WM
-global.stiker_wait = 'Stiker sedang dibuat'
+global.stiker_wait = '🌱Stiker sedang dibuat'
 global.packname = 'AWAKRI DEVICE'
 global.author = `@mhdfakri_`
 
@@ -79,8 +79,8 @@ global.github = 'https://github.com/krizynofc'
 global.ppmenu = 'https://telegra.ph/file/d193805fc50e562415f3d.jpg'
 
 global.fla = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=crafts-logo&doScale=true&scaleWidth=500&scaleHeight=500&fontsize=100&fillTextType=0&backgroundColor=%23401620&text='
-global.wait = '_*L O A D I N G*_'
-global.eror = '_*Server Error*_'
+global.wait = '⏳ Wait, sedang diproses...'
+global.eror = '📮 Server tidak ditemukan'
 global.benar = 'Benar ✅\n'
 global.salah = 'Salah ❌\n'
 
