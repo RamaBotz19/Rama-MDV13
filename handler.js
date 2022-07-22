@@ -750,6 +750,10 @@ global.dfail = (type, m, conn) => {
     else who = m.sender
     let user = global.db.data.users[who]
     let pp = fs.readFileSync('./src/welcome.jpg')
+    let user = global.db.data.users[m.sender]
+    let nme = await conn.getName(m.sender)
+    let date = global.date
+	let wm = global.wm
     let msg = {
         rowner: '*「 CREATOR ONLY 」*',
     owner: '*「 OWNER ONLY 」*',
@@ -771,15 +775,99 @@ global.dfail = (type, m, conn) => {
     private: `Hai, ${user.name} 👋\nFitur Ini hanya bisa dipakai dichat pribadi!!`,
     admin: `Hai, ${user.name} 👋\nFitur Ini hanya khusus admin group!!`,
     botAdmin: `Hai, ${user.name} 👋\nJadikan bot admin dulu untuk memakai fitur ini!!`,
+    }[type]
+    if (msg) return conn.sendHButtonLoc(m.chat,pp, des, msg, "GITHUB", github, `OWNER`, `.owner`, m)
     
-    unreg: `*── 「 NOT REGISTERED 」 ──*
-Halo ${user.name}
+    let unreg = {
+unreg: `*── 「 NOT REGISTERED 」 ──*
+Halo ${nme}
 Yuk Daftar Dulu Karena Anda Belum Terdaftar Dalam Database Bot
     
 📍 Ketik : #daftar nama.umur
-▸ Contoh : #daftar ${user.name}.13`
+▸ Contoh : #daftar ${nme}.18`
     }[type]
-    if (msg) return conn.sendHButtonLoc(m.chat,pp, des, msg, "GITHUB", github, `OWNER`, `.owner`, m)
+    if (unreg) return 
+     const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fromObject({
+        listMessage: {
+            title: unreg,
+            description: global.date,
+            buttonText: 'Click Here!',
+            listType: 1,
+            footerText: global.wm,
+            mtype: 'listMessage',
+            sections: [
+              {
+                                "rows": [{
+                                         "title": '27 Tahun',
+                                         "rowId": '.daftar ' + nme + '.27'
+                                    }, {
+                                         "title": '26 Tahun',
+                                         "rowId": '.daftar ' + nme + '.26'
+                                    }, {
+                                    	"title": '25 Tahun',
+                                         "rowId": '.daftar ' + nme + '.25'
+                                    }, {
+                                    	"title": '24 Tahun',
+                                         "rowId": '.daftar ' + nme + '.24'
+                                    }, {
+                                    	"title": '23 Tahun',
+                                         "rowId": '.daftar ' + nme + '.23'
+                                    }, {
+                                    	"title": '22 Tahun',
+                                         "rowId": '.daftar ' + nme + '.22'
+                                    }, {
+                                    	"title": '21 Tahun',
+                                         "rowId": '.daftar ' + nme + '.21'
+                                    }, {
+                                    	"title": '20 Tahun',
+                                         "rowId": '.daftar ' + nme + '.20'
+                                    }, {
+                                    	"title": '19 Tahun',
+                                         "rowId": '.daftar ' + nme + '.19'
+                                    }, {
+                                    	"title": '18 Tahun',
+                                         "rowId": '.daftar ' + nme + '.18'
+                                    }, {
+                                    	"title": '17 Tahun',
+                                         "rowId": '.daftar ' + nme + '.17'
+                                    }, {
+                                    	"title": '16 Tahun',
+                                         "rowId": '.daftar ' + nme + '.16'
+                                    }, {
+                                    	"title": '15 Tahun',
+                                         "rowId": '.daftar ' + nme + '.15'
+                                    }, {
+                                    	"title": '14 Tahun',
+                                         "rowId": '.daftar ' + nme + '.14'
+                                    }, {
+                                    	"title": '13 Tahun',
+                                         "rowId": '.daftar ' + nme + '.13'
+                                    }, {
+                                    	"title": '12 Tahun',
+                                         "rowId": '.daftar ' + nme + '.12'
+                                    }, {
+                                    	"title": '11 Tahun',
+                                         "rowId": '.daftar ' + nme + '.11'
+                                    }, {
+                                    	"title": '10 Tahun',
+                                         "rowId": '.daftar ' + nme + '.10'
+                                         }, {
+                                    	"title": '9 Tahun',
+                                         "rowId": '.daftar ' + nme + '.9'
+                       }],
+                    "title": "Silahkan Pilih Umur Anda!"
+                  }
+            ], "contextInfo": 
+            {  "stanzaId": m.key.id,
+              "participant": "0@s.whatsapp.net",
+			  "remoteJid": "6283136505591-1614953337@g.us",
+              "quotedMessage": m.message
+            }
+    }}), { userJid: m.participant || m.key.remoteJid, quoted: ftroli });
+    return await conn.relayMessage(
+        m.key.remoteJid,
+        template.message,
+        { messageId: template.key.id }
 }
 
 let fs = require('fs')
