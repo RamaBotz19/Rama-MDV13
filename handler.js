@@ -787,7 +787,7 @@ Yuk Daftar Dulu Karena Anda Belum Terdaftar Dalam Database Bot
 ▸ Contoh : #daftar ${nme}.18`
     }[type]
     if (unreg) return 
-     const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fromObject({
+    await conn.template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fromObject({
         listMessage: {
             title: unreg,
             description: global.date,
@@ -869,7 +869,7 @@ Yuk Daftar Dulu Karena Anda Belum Terdaftar Dalam Database Bot
         template.message,
         { messageId: template.key.id }
 }
-
+}
 let fs = require('fs')
 let chalk = require('chalk')
 let file = require.resolve(__filename)
