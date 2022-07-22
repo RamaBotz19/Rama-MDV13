@@ -785,7 +785,7 @@ Yuk Daftar Dulu Karena Anda Belum Terdaftar Dalam Database Bot
     
 📍 Ketik : #daftar nama.umur
 ▸ Contoh : #daftar ${nme}.18`
-    await conn.template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fromObject({
+    if (unreg) return conn.relayWAMessage(generateWAMessageFromContent(m.key.remoteJid, proto.Message.fromObject({
         listMessage: {
             title: unreg,
             description: global.date,
