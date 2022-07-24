@@ -753,7 +753,8 @@ global.dfail = (type, m, conn) => {
     let user = global.db.data.users[m.sender]
     let nme = await conn.getName(m.sender)
     let date = global.date
-	let wm = global.wm
+    let wm = global.wm
+    let ftroli = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "6289523258649-1604595598@g.us"}, "message": {orderMessage: {itemCount: 0,status: 200, surface: 200, message: 'NOT VERIFY', orderTitle: 'Centauri', sellerJid: '0@s.whatsapp.net'}}}
     let msg = {
         rowner: '*「 CREATOR ONLY 」*',
     owner: '*「 OWNER ONLY 」*',
@@ -785,7 +786,8 @@ Yuk Daftar Dulu Karena Anda Belum Terdaftar Dalam Database Bot
     
 📍 Ketik : #daftar nama.umur
 ▸ Contoh : #daftar ${nme}.18`
-    if (unreg) return conn.relayWAMessage(generateWAMessageFromContent(m.key.remoteJid, proto.Message.fromObject({
+    if (unreg) return 
+        this.tamplate = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fromObject({
         listMessage: {
             title: unreg,
             description: global.date,
